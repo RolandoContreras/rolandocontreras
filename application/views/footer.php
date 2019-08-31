@@ -1,88 +1,107 @@
-<footer id="footer" class="footer enabled ">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <aside id="about_sply_widget-77" class="widget widget_about">
-            <div class="widgetBody clearfix">
-              <div class="logo-wrapper">
-                <a class="logo"> 
-                    <img src="<?php echo site_url().'static/page_front/images/logo/logo_white.png';?>" width="250" alt="logo"> 
-                    <img class="retina" src="<?php echo site_url().'static/page_front/images/logo_white.png';?>"
-                    alt=""> </a>
+  <footer class="footer-area bg-img bg-overlay-2 section-padding-100-0">
+    <div class="main-footer-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+              <a href="#" class="footer-logo"><img src="img/core-img/logo.png" alt=""></a>
+              <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain.</p>
+              <div class="social-info">
+                <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                <a href="#"><i class="zmdi zmdi-instagram"></i></a>
+                <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
               </div>
-              <p>Somos una agencia de marketing digital con un equipo de profesionales altamente especializados en el rubro de construcción de software y posicionamiento de marcas.</p>
             </div>
-          </aside>
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-3">
-          <aside id="contacts_sply_widget-77" class="widget widget_contacts">
-            <div class="widgetBody clearfix">
-              <h2 class="widgettitle">Contacto</h2>
-              <ul class="list-unstyled">
-                  <li><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp;&nbsp;info@cevolution.com</li>
-                <li><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;Calle Los Antares 320 Of 606<br> Lima, Perú</li>
-                <li><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;&nbsp;+51(1) 639 -7929</li>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+
+              <h5 class="widget-title">Contact</h5>
+
+              <div class="footer-contact-info">
+                <p><i class="zmdi zmdi-map"></i> 184 Main Collins Street</p>
+                <p><i class="zmdi zmdi-phone"></i> (226) 446 9371</p>
+                <p><i class="zmdi zmdi-email"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6a5a9a8a0a3b486a1aba7afaae8a5a9ab">[email&#160;protected]</a></p>
+                <p><i class="zmdi zmdi-globe"></i> www.confer.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+
+              <h5 class="widget-title">Workshops</h5>
+
+              <ul class="footer-nav">
+                <li><a href="#">OSHA Compliance</a></li>
+                <li><a href="#">Microsoft Excel Basics</a></li>
+                <li><a href="#">Forum Speaker Series</a></li>
+                <li><a href="#">Tedx Moscow Conference</a></li>
               </ul>
             </div>
-          </aside>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="single-footer-widget mb-60 wow fadeInUp" data-wow-delay="300ms">
+
+              <h5 class="widget-title">Gallery</h5>
+
+              <div class="footer-gallery">
+                <div class="row">
+                  <div class="col-4">
+                    <a href="img/bg-img/21.jpg" class="single-gallery-item"><img src="img/bg-img/21.jpg" alt=""></a>
+                  </div>
+                  <div class="col-4">
+                    <a href="img/bg-img/22.jpg" class="single-gallery-item"><img src="img/bg-img/22.jpg" alt=""></a>
+                  </div>
+                  <div class="col-4">
+                    <a href="img/bg-img/23.jpg" class="single-gallery-item"><img src="img/bg-img/23.jpg" alt=""></a>
+                  </div>
+                  <div class="col-4">
+                    <a href="img/bg-img/24.jpg" class="single-gallery-item"><img src="img/bg-img/24.jpg" alt=""></a>
+                  </div>
+                  <div class="col-4">
+                    <a href="img/bg-img/25.jpg" class="single-gallery-item"><img src="img/bg-img/25.jpg" alt=""></a>
+                  </div>
+                  <div class="col-4">
+                    <a href="img/bg-img/26.jpg" class="single-gallery-item"><img src="img/bg-img/26.jpg" alt=""></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-3">
-          <aside id="socials_sply_widget-77" class="widget widget_socials">
-            <div class="widgetBody clearfix">
-                <h2 class="widgettitle"><?php echo replace_vocales_voculeshtml("Síguenos");?></h2>
-              <ul class="list-inline socials">
-                <li><a href="#" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></span></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa fa-vimeo fa-2x" aria-hidden="true"></i></a></li>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copywrite-content">
+        <div class="row">
+
+          <div class="col-12 col-md-6">
+            <div class="copywrite-text">
+              <p>
+                Copyright &copy;
+                <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+                <script type="cf287faf9857d5fe6bcbe766-text/javascript">
+                  document.write(new Date().getFullYear());
+                </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                  target="_blank">Colorlib</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="footer-menu">
+              <ul class="nav">
+                <li><a href="#"><i class="zmdi zmdi-circle"></i> Terms of Service</a></li>
+                <li><a href="#"><i class="zmdi zmdi-circle"></i> Privacy Policy</a></li>
               </ul>
             </div>
-          </aside>
+          </div>
         </div>
-        
       </div>
     </div>
   </footer>
-<div class="back-to-top"><a href="#"><i class="fa fa-angle-up fa-3x"></i></a></div>
-  <style>
-    .vivaco-3627 .modal-box {width:780px; height:480px;}.vivaco-3627 .modal-box {-webkit-animation-duration: 0.5s;-moz-animation-duration: 0.5s;-ms-animation-duration: 0.5s;-o-animation-duration: 0.5s;animation-duration: 0.5s;}
-  </style>
-  <link rel='stylesheet' id='font-awesome-css' href='<?php echo site_url().'static/page_front/css/font-awesome.min.css?ver=5.2.1'?>' type='text/css' media='all' />
-  <link rel='stylesheet' id='vc_tta_style-css' href='<?php echo site_url().'static/page_front/css/js_composer_tta.min.css?ver=5.2.1'?>' type='text/css' media='all' />
-  <link rel='stylesheet' id='vc_linecons-css' href='<?php echo site_url().'static/page_front/css/vc_linecons_icons.min.css?ver=5.2.1'?>' type='text/css' media='all' />
-  <script type='text/javascript'>
-    /* <![CDATA[ */var edd_scripts = {"ajaxurl":"","has_purchase_links":"","already_in_cart_message":"You have already added this item to your cart","empty_cart_message":"Your cart is empty","loading":"Loading","select_option":"Please select an option","is_checkout":"0","default_gateway":"","redirect_to_checkout":"0"};/* ]]> */
-  </script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/edd-ajax.min.js?ver=2.8.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/comment-reply.min.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/EasePack.min.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/bootstrap.min.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/jquery.nav.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/jquery.parallax-1.1.3.js?ver=1.1.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/jquery.isotope.min.js?ver=1.0'?>'></script>
-  <script type='text/javascript'>
-    /* <![CDATA[ */var vals = [];var vsc_grid_pGROJ = {"id":"our","gutter_width":"","vals":{"grid_manager":1,"grid_phone":1,"grid_tablet":2,"grid_small":"3","grid_wide":"3","grid_very_wide":"3","grid_normal":"3","grid_gutter_width":0}};/* ]]> */
-  </script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/startuply-isotopeportfolio.js?ver=1.0'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/headhesive.min.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/jquery.prettyPhoto.min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/startuply-core.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/wp-embed.min.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/picturefill.min.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/js_composer_front.min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/startuply-parallax.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/waypoints.min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/vc-accordion.min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/vc-tta-autoplay.min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/vc-tabs.min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/core.min.js?ver=1.11.4'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/widget.min.js?ver=1.11.4'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/tabs.min.js?ver=1.11.4'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/jquery-ui-tabs-rotate.min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/jquery.flexslider-min.js?ver=5.2.1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/jquery.bxslider.min.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/startuply-contentslider.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/ProgressCircle.js?ver=1'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/startuply-pie.js?ver=4.7.3'?>'></script>
-  <script type='text/javascript' src='<?php echo site_url().'static/page_front/js/startuply-counter.js?ver=4.7.3'?>'></script>
