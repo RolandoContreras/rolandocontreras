@@ -18,7 +18,7 @@
                   <a href="<?php echo site_url();?>">Home</a>
               </li>
               <li><a href="#">Pages</a>
-                <ul class="dropdown">
+                <ul class="dropdown"> 
                     <li><a href="<?php echo site_url();?>">- Home</a></li>
                   <li><a href="about.html">- About Us</a></li>
                   <li><a href="speakers.html">- Speakears</a></li>
