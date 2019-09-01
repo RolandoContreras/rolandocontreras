@@ -42,53 +42,9 @@ $route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
 $route['home'] = 'home';
+$route['videos'] = 'videos';
 $route['login'] = 'login';
 $route['plan/([0-9a-z_-]+)'] = "plan/packages";
-
-$route['backoffice'] = "b_home";
-$route['backoffice/productos'] = "b_product";
-$route['backoffice/profile'] = "b_data";
-$route['backoffice/upgrade'] = "b_upgrade";
-$route['backoffice/binario'] = "b_binario";
-$route['backoffice/binario/([0-9a-z_-]+)'] = "b_binario/index/$1";
-
-$route['backoffice/academy'] = "b_academy";
-$route['backoffice/academy/courses'] = "b_academy/courses";
-$route['backoffice/academy/courses/([0-9a-z_-]+)'] = "b_academy/courses//$1";
-
-$route['backoffice/messages'] = "b_messages";
-$route['backoffice/messages/bonus'] = "b_messages/message_type";
-$route['backoffice/messages/bonus/([0-9a-z_-]+)'] = "b_messages/message_type/$1";
-
-$route['backoffice/messages/support'] = "b_messages/message_type";
-$route['backoffice/messages/support/([0-9a-z_-]+)'] = "b_messages/message_type/$1";
-
-$route['backoffice/messages/social'] = "b_messages/message_type";
-$route['backoffice/messages/social/([0-9a-z_-]+)'] = "b_messages/message_type/$1";
-
-$route['backoffice/compose_message'] = "b_messages/compose_message"; 
-
-
-$route['backoffice/unilevel'] = "b_unilevel";
-$route['backoffice/unilevel/([0-9a-z_-]+)'] = "b_unilevel/index/$1";
-
-$route['backoffice/comisiones'] = "b_comissions";
-//$route['backoffice/comisiones/consultar'] = "b_comissions/consultar";
-$route['backoffice/comisiones/pay_dialy'] = "b_comissions/index/$1";
-$route['backoffice/comisiones/binary'] = "b_comissions/index/$1";
-$route['backoffice/comisiones/referred'] = "b_comissions/index/$1";
-
-$route['backoffice/billetera'] = "b_wallet";
-$route['backoffice/cobros'] = "b_pay";
-$route['backoffice/pagos/validar'] = "b_pay/validate";
-
-$route['backoffice/message_confirmation'] = "b_message_confirmation";
-$route['backoffice/message_confirmation/upload'] = "b_message_confirmation/upload";
-
-$route['logout'] = "b_home/logout";
-$route['backoffice/misdatos'] = "b_data";
-
-$route['register/afiliate/([0-9a-z_-]+)'] = "register/index/$1";
 
 $route['dashboard'] = "dashboard";
 $route['dashboard/panel'] = "panel";
@@ -128,10 +84,6 @@ $route['dashboard/cobros'] = "d_pays";
 $route['dashboard/cobros_details/([0-9]+)'] = "d_pays/details/$1";
 $route['dashboard/cobros/pagado'] = "d_pays/pagado";
 $route['dashboard/cobros/devolver'] = "d_pays/devolver";
-
-$route['dashboard/comentarios'] = "d_comments";
-$route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
-$route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
 $route['dashboard/usuarios'] = "d_users";
 $route['dashboard/usuarios'] = "d_users";

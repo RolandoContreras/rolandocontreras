@@ -19,7 +19,7 @@
               </li>
               <li><a href="#">Pages</a>
                 <ul class="dropdown"> 
-                    <li><a href="<?php echo site_url();?>">- Home</a></li>
+                  <li><a href="<?php echo site_url();?>">- Home</a></li>
                   <li><a href="about.html">- About Us</a></li>
                   <li><a href="speakers.html">- Speakears</a></li>
                   <li><a href="schedule.html">- Schedule</a></li>
@@ -38,7 +38,7 @@
                 </ul>
               </li>
               <li><a href="speakers.html">Speakears</a></li>
-              <li><a href="blog.html">Blog</a></li>
+              <li><a href="<?php echo site_url().'videos';?>">Vídeos</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
             <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
