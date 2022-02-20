@@ -13,38 +13,27 @@ class D_comments extends CI_Controller{
             $params = array(
                         "select" =>"comments.comment_id,
                                     comments.name,
-                                    comments.comment,
+                                    comments.message,
+                                    comments.phone,
                                     comments.email,
                                     comments.status_value,
-                                    comments.date_comment",
-                         "order" => "date_comment ASC"
+                                    comments.date"
             );
             //GET DATA COMMENTS
             $obj_comments= $this->obj_comments->search($params);
-            
-            
-            /// PAGINADO
-            $modulos ='comentarios'; 
-            $seccion = 'Lista';        
-            $link_modulo =  site_url().'dashboard/'.$modulos; 
-            /// DATA
-            
             /// VISTA
-            $this->tmp_mastercms->set('link_modulo',$link_modulo);
-            $this->tmp_mastercms->set('modulos',$modulos);
-            $this->tmp_mastercms->set('seccion',$seccion);
             $this->tmp_mastercms->set("obj_comments",$obj_comments);
             $this->tmp_mastercms->render("dashboard/comentarios/comments_list");
     }
     
-    public function change_status(){
+      public function change_status(){
             //UPDATE DATA ORDERS
         if($this->input->is_ajax_request()){   
               $comment_id = $this->input->post("comment_id");
               
-                if(count($comment_id) > 0){
+                if(isset($comment_id) != ""){
                     $data = array(
-                        'status_value' => 1,
+                        'status_value' => 0,
                         'updated_at' => date("Y-m-d H:i:s"),
                         'updated_by' => $_SESSION['usercms']['user_id'],
                     ); 
@@ -59,9 +48,9 @@ class D_comments extends CI_Controller{
             //UPDATE DATA ORDERS
         if($this->input->is_ajax_request()){   
                 $comment_id = $this->input->post("comment_id");
-                if(count($comment_id) > 0){
+                if(isset($comment_id) != ""){
                     $data = array(
-                        'status_value' => 0,
+                        'status_value' => 1,
                         'updated_at' => date("Y-m-d H:i:s"),
                         'updated_by' => $_SESSION['usercms']['user_id'],
                     ); 
@@ -72,9 +61,10 @@ class D_comments extends CI_Controller{
             }
     }
     
+    
     public function get_session(){          
         if (isset($_SESSION['usercms'])){
-            if($_SESSION['usercms']['logged_usercms']=="TRUE" && $_SESSION['usercms']['status']==1){               
+            if($_SESSION['usercms']['logged_usercms']=="TRUE"){               
                 return true;
             }else{
                 redirect(site_url().'dashboard');

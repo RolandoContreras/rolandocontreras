@@ -18,10 +18,11 @@ BITSHARE S.A.C
 class comments_model_atributos{	
     var $comment_id='';
     var $name='';
-    var $email='';
-    var $comment='';
     var $subject='';
-    var $date_comment='';
+    var $email='';
+    var $message='';
+    var $date='';
+    var $active='';
     var $status_value='';
     var $updated_at='';
     var $updated_by='';
@@ -35,11 +36,11 @@ class Comments_Model extends CI_Model{
 	$this->table_id = 'comment_id';
         $this->customer_id='';
         $this->name='';
-        $this->email='';
-        $this->comment='';
         $this->subject='';
-	$this->date_comment='';
-	$this->status_value='';
+        $this->email='';
+        $this->message='';
+	$this->date='';
+        $this->active='';
         $this->updated_at='';
         $this->updated_by='';
 	$this->fields = new comments_model_atributos();
@@ -59,12 +60,12 @@ class Comments_Model extends CI_Model{
   
     public function update($pk, $data){
         $this->db->where($this->table_id, $pk);
-        $this->db->update($this->table, $data);
+        return $this->db->update($this->table, $data);
     }
 
     public function delete($pk){
         $this->db->where($this->table_id, $pk);
-        $this->db->delete($this->table);
+        return $this->db->delete($this->table);
     }
   
     public function get_search_row($data){

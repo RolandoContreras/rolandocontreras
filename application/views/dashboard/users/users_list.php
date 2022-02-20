@@ -1,91 +1,101 @@
-<script src="static/cms/js/core/bootstrap-modal.js"></script>
-<script src="static/cms/js/core/bootbox.min.js"></script>
-<script src="static/cms/js/core/jquery-1.11.1.min.js"></script>
-<script src="static/cms/js/core/jquery.dataTables.min.js"></script>
-<link href="static/cms/css/core/jquery.dataTables.css" rel="stylesheet"/>
-
-<!-- main content -->
-<div id="main_content" class="span9">
-    <div class="row-fluid">
-        <div class="widget_container">
-            <div class="well">
-                    <div class="navbar navbar-static navbar_as_heading">
-                            <div class="navbar-inner">
-                                    <div class="container" style="width: auto;">
-                                            <a class="brand">LISTADO DE  USUARIOS</a>
-                                            <button class="btn btn-small" onclick="nuevo_users();">Nuevo</button>
-                                    </div>
+<script src="<?php echo site_url() . 'assets/cms/js/core/bootbox.locales.min.js'; ?>"></script>
+<script src="<?php echo site_url() . 'assets/cms/js/core/bootbox.min.js'; ?>"></script>
+<section class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="page-header">
+                    <div class="page-block">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <div class="page-header-title">
+                                    <h5 class="m-b-10">Mantenimientos de Usuario</h5>
+                                </div>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="<?php echo site_url() . 'dashboard/'; ?>">Panel</a></li>
+                                    <li class="breadcrumb-item"><a>Usuario</a></li>
+                                </ul>
                             </div>
+                        </div>
                     </div>
-                
-             <!--<form>-->
-                <div class="well nomargin" style="width: 100%;">
-                    <!--- INCIO DE TABLA DE RE4GISTRO -->
-                   <table id="table" class="display" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>USERNAME</th>
-                                <th>CONTRASEÑA</th>
-                                <th>NOMBRE</th>
-                                <th>E-MAIL</th>
-                                <th>PRIVILEGIOS</th>
-                                <th>FECHA DE CREACIÓN</th>
-                                <th>ESTADO</th> 
-                                <th>ACCIONES</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <?php foreach ($obj_users as $value): ?>
-                                <td align="center"><b><?php echo $value->user_name;?></b></td>
-                                <td align="center"><b><?php echo $value->password;?></b></td>
-                                <td align="center"><?php echo $value->first_name." ".$value->last_name;?></td>
-                                <td align="center"><?php echo $value->email;?></td>
-                                <td align="center">
-                                    <?php 
-                                    if ($value->privilage == 3){
-                                        echo "<b>"."Control Total"."</b>";
-                                    }elseif($value->privilage == 2){
-                                        echo "<b>"."Control Medio"."</b>";
-                                    }else{
-                                        echo "<b>"."Control Simple"."</b>";
-                                    }
-                                    
-                                    ?>
-                                </td>
-                                <td align="center"><?php echo formato_fecha($value->created_at);?></td>
-                                <td align="center">
-                                    <?php if ($value->status_value == 0) {
-                                        $valor = "Inactivo";
-                                        $stilo = "label label-important";
-                                    }else{
-                                        $valor = "Activo";
-                                        $stilo = "label label-success";
-                                    } ?>
-                                    <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
-                                </td>
-                                <td>
-                                    <div class="operation">
-                                            <div class="btn-group">
-                                                    <button class="btn btn-small" onclick="edit_users('<?php echo $value->user_id;?>');">Editar</button>
-                                          </div>
+                </div>
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Listado de Usuario</h5>
+                                        <button class="btn btn-secondary" type="button" onclick="new_users();"><span><span class="pcoded-micon"><i data-feather="plus"></i></span> Nuevo</span></button>
                                     </div>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                                    <div class="card-block">
+                                        <div class="table-responsive">
+                                            <div id="zero-configuration_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
+                                                            <thead>
+                                                                <tr role="row">
+                                                                    <th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="width: 150px;">ID</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Nombre</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Email / Usuario</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Fecha de Creación</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Estado</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Acciones</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <?php foreach ($obj_users as $value): ?>
+                                                                <td><b><?php echo $value->user_id; ?></b></td>
+                                                                <td><?php echo $value->first_name . " " . $value->last_name; ?></td>
+                                                                <td><?php echo $value->email; ?></td>
+                                                                <td><?php echo formato_fecha_barras($value->date); ?></td>
+                                                                <td>
+                                                                    <?php
+                                                                    if ($value->active == 0) {
+                                                                        $valor = "No Activo";
+                                                                        $stilo = "badge-danger";
+                                                                    } else {
+                                                                        $valor = "Activo";
+                                                                        $stilo = "badge-success";
+                                                                    }
+                                                                    ?>
+                                                                    <span class="badge badge-pill <?php echo $stilo ?>" style="font-size: 90%;"><?php echo $valor; ?></span>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="operation">
+                                                                        <div class="btn-group">
+                                                                            <button class="btn btn-secondary" type="button" onclick="edit_users('<?php echo $value->user_id; ?>');"><span class="pcoded-micon"><i data-feather="edit"></i></span>  Editar</button>
+                                                                            <button class="btn btn-secondary" type="button" onclick="delete_users('<?php echo $value->user_id; ?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                </tr>
+                                                            <?php endforeach; ?>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th rowspan="1" colspan="1">ID</th>
+                                                                    <th rowspan="1" colspan="1">Nombre</th>
+                                                                    <th rowspan="1" colspan="1">Email / Usuario</th>
+                                                                    <th rowspan="1" colspan="1">Fecha de Creación</th>
+                                                                    <th rowspan="1" colspan="1">Estado</th>
+                                                                    <th rowspan="1" colspan="1">Acciones</th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-           <!--</form>-->         
         </div>
     </div>
-</div><!-- main content -->
-</div>
-<script type="text/javascript">
-   $(document).ready(function() {
-    $('#table').dataTable( {
-         "order": [[ 0, "desc" ]]
-    } );
-} );
-</script>
-<script src="static/cms/js/users.js"></script>
+</section>
+<script src="<?php echo site_url(); ?>assets/cms/js/usuarios.js"></script>

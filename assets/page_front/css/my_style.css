@@ -1,0 +1,44 @@
+.bg-color-1{
+/*    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(199,248,253,1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(199,248,253,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(199,248,253,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(199,248,253,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 14%, rgba(199,248,253,1) 100%);
+    -webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover*/
+     background-image: url("../img/bg/rolando.jpg");
+}
+.white-color{
+    color: white !important;
+}
+.red-color{
+    color: red !important;
+}
+#mi-boton{
+  background-color: #ffce2a !important;
+  padding: 18px;
+  font-size: 18px;
+}
+@media ( max-width: 320px ) {
+}
+@media ( max-width: 480px ) {
+}
+
+@media (max-width: 515px) {
+    #reservar_boton{
+        font-size: 17px !important;
+        padding: 15px !important;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1024px) {
+}

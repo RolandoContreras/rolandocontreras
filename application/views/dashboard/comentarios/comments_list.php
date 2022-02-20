@@ -1,84 +1,107 @@
-<script src="static/cms/js/core/bootstrap-modal.js"></script>
-<script src="static/cms/js/core/bootbox.min.js"></script>
-<script src="static/cms/js/core/jquery-1.11.1.min.js"></script>
-<script src="static/cms/js/core/jquery.dataTables.min.js"></script>
-<link href="static/cms/css/core/jquery.dataTables.css" rel="stylesheet"/>
-
-<!-- main content -->
-<div id="main_content" class="span9">
-    <div class="row-fluid">
-        <div class="widget_container">
-            <div class="well">
-                    <div class="navbar navbar-static navbar_as_heading">
-                            <div class="navbar-inner">
-                                    <div class="container" style="width: auto;">
-                                            <a class="brand">COMENTARIOS</a>
-                                    </div>
-                            </div>
-                    </div>
-                
-             <!--<form>-->
-                <div class="well nomargin" style="width: 100% !important;">
-                    <!--- INCIO DE TABLA DE RE4GISTRO -->
-                   <table id="table" class="display" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombres</th>
-                                <th>Correo Electrónico</th>
-                                <th>Comentario</th>
-                                <th>Fecha de Comentario</th>
-                                <th>Estado</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($obj_comments as $value): ?>
-                                <tr>
-                            <th><?php echo $value->comment_id;?></th>
-                            <td>
-                                <div class="post_title"><?php echo $value->name;?></div>
-                            </td>
-                            <td><?php echo $value->email;?></td>
-                            <td><?php echo $value->comment;?></td>
-                            <td><?php echo formato_fecha($value->date_comment);?></td>
-                            <td>
-                                <?php if ($value->status_value == 1) {
-                                    $valor = "Leido";
-                                    $stilo = "label label-success";
-                                }else{
-                                    $valor = "No Leido";
-                                    $stilo = "label label-important";
-                                } ?>
-                                <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
-                            </td>
-                            <td>
-                                <div class="operation">
-                                        <div class="btn-group">
-                                            <?php 
-                                            if($value->status_value == 1){ ?>
-                                                    <button class="btn btn-small" onclick="change_state_no('<?php echo $value->comment_id;?>');">Marcar como no Contestado</button>
-                                            <?php }else{ ?>
-                                                    <button class="btn btn-small" onclick="change_state('<?php echo $value->comment_id;?>');">Marcar como Contestado</button> 
-                                            <?php } ?>
-                                        </div>
-                                </div>
-                            </td>
-                        </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+<script src="<?php echo site_url().'assets/cms/js/core/bootbox.locales.min.js';?>"></script>
+<script src="<?php echo site_url().'assets/cms/js/core/bootbox.min.js';?>"></script>
+<section class="pcoded-main-container">
+  <div class="pcoded-wrapper">
+    <div class="pcoded-content">
+      <div class="pcoded-inner-content">
+        <div class="page-header">
+          <div class="page-block">
+            <div class="row align-items-center">
+              <div class="col-md-12">
+                <div class="page-header-title">
+                  <h5 class="m-b-10">Mantenimientos de Comentarios</h5>
+                </div>
+                <ul class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="<?php echo site_url().'dashboard/';?>">Panel</a></li>
+                  <li class="breadcrumb-item"><a>Comentarios</a></li>
+                </ul>
+              </div>
             </div>
-           <!--</form>-->         
+          </div>
         </div>
-    </div>
-</div><!-- main content -->
-</div>
-<script type="text/javascript">
-   $(document).ready(function() {
-    $('#table').dataTable( {
-         "order": [[ 0, "desc" ]]
-    } );
-} );
-</script>
-<script src="<?php echo site_url();?>static/cms/js/comments.js"></script>
+        <div class="main-body">
+          <div class="page-wrapper">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h5>Listado de Comentarios</h5>
+                  </div>
+                  <div class="card-block">
+                    <div class="table-responsive">
+                      <div id="zero-configuration_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
+                              <thead>
+                                <tr role="row">
+                                  <th class="sorting_asc" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">ID</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Fecha</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Nombre</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">E-mail</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Mensaje</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Estado</th>
+                                  <th class="sorting" tabindex="0" aria-controls="zero-configuration" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending">Acciones</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                   <?php foreach ($obj_comments as $value): ?>
+                                <tr>
+                                <th><?php echo $value->comment_id;?></th>
+                                <td><?php echo formato_fecha_barras($value->date);?></td>
+                                <td><?php echo $value->name;?></td>
+                                <td><?php echo $value->email;?></td>
+                                <td><?php echo $value->message;?></td>
+                                <td>
+                                    <?php if ($value->status_value == 0) {
+                                        $valor = "Leido";
+                                        $stilo = "label label-success";
+                                    }else{
+                                        $valor = "No Leido";
+                                        $stilo = "label label-danger";
+                                    } ?>
+                                    <span class="<?php echo $stilo;?>"><?php echo $valor;?></span>
+                                </td>
+                                <td>
+                                    <div class="operation">
+                                            <div class="btn-group">
+                                                
+                                            <?php 
+                                            if($value->status_value == 0){ ?>
+                                                    <button class="btn btn-secondary buttons-copy buttons-html5" onclick="change_state_no('<?php echo $value->comment_id;?>');" tabindex="0" aria-controls="key-act-button" type="button"><span>Marcar como no Contestado</span></button>
+                                            <?php }else{ ?>
+                                                    <button class="btn btn-secondary buttons-copy buttons-html5" onclick="change_state('<?php echo $value->comment_id;?>');" tabindex="0" aria-controls="key-act-button" type="button"><span>Marcar como Contestado</span></button>
+                                            <?php } ?>
+                                            </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                              </tbody>
+                              <tfoot>
+                                <tr>
+                                  <th rowspan="1" colspan="1">ID</th>
+                                  <th rowspan="1" colspan="1">Fecha</th>
+                                  <th rowspan="1" colspan="1">Nombre</th>
+                                  <th rowspan="1" colspan="1">E-mail</th>
+                                  <th rowspan="1" colspan="1">Mensaje</th>
+                                  <th rowspan="1" colspan="1">Estado</th>
+                                  <th rowspan="1" colspan="1">Acciones</th>
+                                </tr>
+                              </tfoot>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</section>
+<script src="<?php echo site_url();?>assets/cms/js/comentarios.js"></script>

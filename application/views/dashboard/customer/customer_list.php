@@ -1,88 +1,102 @@
-<script src="static/cms/js/core/bootstrap-modal.js"></script>
-<script src="static/cms/js/core/bootbox.min.js"></script>
-<script src="static/cms/js/core/jquery-1.11.1.min.js"></script>
-<script src="static/cms/js/core/jquery.dataTables.min.js"></script>
-<link href="static/cms/css/core/jquery.dataTables.css" rel="stylesheet"/>
-
-<!-- main content -->
-<div id="main_content" class="span9">
-    <div class="row-fluid">
-        <div class="widget_container" style="width: 110%;">
-            <div class="well">
-                    <div class="navbar navbar-static navbar_as_heading">
-                            <div class="navbar-inner">
-                                    <div class="container" style="width: 110%;">
-                                            <a class="brand">LISTADO DE  ASOCIADOS</a>
-                                    </div>
+<script src="<?php echo site_url() . 'assets/cms/js/core/bootbox.locales.min.js'; ?>"></script>
+<script src="<?php echo site_url() . 'assets/cms/js/core/bootbox.min.js'; ?>"></script>
+<section class="pcoded-main-container">
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="page-header">
+                    <div class="page-block">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <div class="page-header-title">
+                                    <h5 class="m-b-10">Mantenimientos de Clientes</h5>
+                                </div>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="<?php echo site_url() . 'dashboard/'; ?>">Panel</a></li>
+                                    <li class="breadcrumb-item"><a>Clientes</a></li>
+                                </ul>
                             </div>
+                        </div>
                     </div>
-                
-             <!--<form>-->
-                <div class="well nomargin" style="width: 100%;">
-                    <!--- INCIO DE TABLA DE RE4GISTRO -->
-                   <table id="table" class="display" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>CODIGO</th>
-                                <th>USUARIO</th>
-                                <th>ASOCIADO</th>
-                                <th>E-MAIL</th>
-                                <th>PAQUETE</th>
-                                <th>ACTIVACIÓN</th> 
-                                <th>ESTADO</th> 
-                                <th>ACCIONES</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <?php foreach ($obj_customer as $value): ?>
-                                <td align="center"><b><?php echo $value->customer_id;?></b></td>
-                                <td align="center"><b><?php echo $value->username;?></b></td>
-                                <td align="center"><?php echo $value->first_name." ".$value->last_name;?></td>
-                                <td align="center"><?php echo $value->email;?></td>
-                                <td align="center"><?php echo $value->franchise;?></td>
-                                <td align="center">
-                                    <?php if ($value->active == 0) {
-                                        $valor = "Inactivo para bonos";
-                                        $stilo = "label label-important";
-                                    }else{
-                                        $valor = "Activo para bonos";
-                                        $stilo = "label label-success";
-                                    } ?>
-                                    <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
-                                </td>
-                                <td align="center">
-                                    <?php if ($value->status_value == 0) {
-                                        $valor = "Inactivo";
-                                        $stilo = "label label-important";
-                                    }else{
-                                        $valor = "Activo";
-                                        $stilo = "label label-success";
-                                    } ?>
-                                    <span class="<?php echo $stilo ?>"><?php echo $valor; ?></span>
-                                </td>
-                                <td>
-                                    <div class="operation">
-                                            <div class="btn-group">
-                                                <button class="btn btn-small" onclick="edit_customer('<?php echo $value->customer_id;?>');">Editar</button>
-                                          </div>
+                </div>
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>Listado de Clientes</h5>
                                     </div>
-                                </td>
-                            </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                                    <div class="card-block">
+                                        <div class="table-responsive">
+                                            <div id="zero-configuration_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <table id="zero-configuration" class="display table nowrap table-striped table-hover dataTable" style="width: 100%;" role="grid" aria-describedby="zero-configuration_info">
+                                                            <thead>
+                                                                <tr role="row">
+                                                                    <th class="sorting_asc" tabindex="0" rowspan="1" colspan="1" style="width: 150px;">ID</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Nombres</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">E-mail</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Teléfono</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Estado</th>
+                                                                    <th class="sorting" tabindex="0" rowspan="1" colspan="1">Acciones</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+                                                                <?php foreach ($obj_customer as $value): ?>
+                                                                    <tr>
+                                                                        <th><?php echo $value->customer_id; ?></th>
+                                                                        <td><?php echo $value->name; ?></td>
+                                                                        <td><?php echo $value->email; ?></td>
+                                                                        <td><?php echo $value->phone; ?></td>
+                                                                        <td>
+                                                                            <?php
+                                                                            if ($value->active == 0) {
+                                                                                $valor = "No Activo";
+                                                                                $stilo = "badge-danger";
+                                                                            } else {
+                                                                                $valor = "Activo";
+                                                                                $stilo = "badge-success";
+                                                                            }
+                                                                            ?>
+                                                                            <span class="badge badge-pill <?php echo $stilo ?>" style="font-size: 100%;"><?php echo $valor; ?></span>
+                                                                        </td>
+                                                                        <td>
+                                                                            <div class="operation">
+                                                                                <div class="btn-group">
+                                                                                    <button class="btn btn-secondary" type="button" onclick="edit_customer('<?php echo $value->customer_id; ?>');"><span><span class="pcoded-micon"><i data-feather="edit"></i></span> Editar</span></button>
+                                                                                    <button class="btn btn-secondary" type="button" onclick="delete_customer('<?php echo $value->customer_id; ?>');"><span><span class="pcoded-micon"><i data-feather="trash-2"></i></span> Eliminar</span></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                            <?php endforeach; ?>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th rowspan="1" colspan="1">ID</th>
+                                                                    <th rowspan="1" colspan="1">Nombres</th>
+                                                                    <th rowspan="1" colspan="1">E-mail</th>
+                                                                    <th rowspan="1" colspan="1">Teléfono</th>
+                                                                    <th rowspan="1" colspan="1">Estado</th>
+                                                                    <th rowspan="1" colspan="1">Acciones</th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-           <!--</form>-->         
         </div>
     </div>
-</div><!-- main content -->
-</div>
-<script type="text/javascript">
-   $(document).ready(function() {
-    $('#table').dataTable( {
-         "order": [[ 0, "desc" ]]
-    } );
-} );
-</script>
-<script src="static/cms/js/customer.js"></script>
+</section>
+<script src="<?php echo site_url(); ?>assets/cms/js/customer.js"></script>

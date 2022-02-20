@@ -24,10 +24,10 @@ class Dashboard extends CI_Controller {
     	        array_pop($cadena3);
     	        array_shift($cadena3);                
     	        $data['print'] = $cadena3[0];
-                $data['message'] = "false";       
+                $data['status'] = false;       
                 
     	    }else{
-                $data['message'] = "true";
+                $data['status'] = true;
     	        $data['print'] = "Bienvenido al sistema";
                 $data['url'] = site_url()."dashboard/panel";               
             }         
@@ -41,21 +41,25 @@ class Dashboard extends CI_Controller {
         $password = $this->input->post('password');  
         $obj_user = $this->obj_user->verificar_email($email,$password);       
         
-        if (count($obj_user)>0){
+        $params = array("select" =>"user_id,
+                                    first_name,
+                                    last_name,
+                                    email,
+                                    privilage,
+                                    active",
+                             "where" => "email = '$email' and password = '$password' and active = 1");
             
-            if ($obj_user->status_value == 1){                            
+            $obj_user_count = $this->obj_user->total_records($params);
+            $obj_user = $this->obj_user->get_search_row($params);
+        
+        if ($obj_user_count > 0){
                 $data_user_session['user_id'] = $obj_user->user_id;
                 $data_user_session['name'] = $obj_user->first_name.' '.$obj_user->last_name;
                 $data_user_session['email'] = $obj_user->email;
                 $data_user_session['privilage'] = $obj_user->privilage;
                 $data_user_session['logged_usercms'] = "TRUE";
-                $data_user_session['status'] = $obj_user->status_value;
-                $_SESSION['usercms'] = $data_user_session;                
-                return true;    
-            }else{
-                $this->form_validation->set_message('validar_user', "Usuario Inactivo");
-                return false;
-            }
+                $data_user_session['active'] = $obj_user->active;
+                $_SESSION['usercms'] = $data_user_session;      
         }else{
             $this->form_validation->set_message('validar_user', "El correo y/o la contraseña no son correctas");
             return false;

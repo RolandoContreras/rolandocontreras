@@ -22,13 +22,15 @@ class Errors extends CI_Controller
  function __construct()
  {
  parent::__construct();
+ 
  $this->load->helper('html');
  }
 
  function error_404()
  {
  //llamamos a la vista que muestra el error 404 personalizado
- $this->load->view('errors/404');
+ $data['title'] = "Página no encontrada 404 | Edukate Pro";
+ $this->load->view('errors/404',$data);
  }
 }
 /* End of file errors.php */

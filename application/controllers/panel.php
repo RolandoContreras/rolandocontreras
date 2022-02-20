@@ -3,135 +3,123 @@
 class Panel extends CI_Controller{
     public function __construct() {
         parent::__construct();    
-        $this->load->model("comments_model","obj_comments");
         $this->load->model("customer_model","obj_customer");
-        $this->load->model("otros_model","obj_otros");
+        $this->load->model("comments_model","obj_comments");
     }
     
     public function index(){
         //GET THE SESSION
         $this->get_session();
-
-        //GET ALL COMMENTS
-        $params = array("select" =>"count(comment_id) as comment_id, (select count(comment_id) from comments where status_value = 1) as active, (select count(comment_id) from comments where status_value = 0) as inactive");
-        $obj_comments = $this->obj_comments->get_search_row($params);
-
-        $active = $obj_comments->active;
-        $inactive = $obj_comments->inactive;
-        $obj_comments = $obj_comments->comment_id;
-        
-        //GET LASTEST COMMENT  
-        $params = array(
-                        "select" =>"comment_id,
-                                    name,
-                                    comment,
-                                    email,
-                                    status_value,
-                                    date_comment",
-                         "order" => "date_comment DESC"
-            );
-        $obj_last_comment = $this->obj_comments->get_search_row($params);
-        
-        //GET AND COUNT ALL THE CUSTOMER
-        $params = array("select" =>"count(customer_id) as customer_id,
-                                    (select count(customer_id) from customer where financy = 1) as financiado");
-        $obj_customer = $this->obj_customer->get_search_row($params);
-        //TOTAL FINANCIADOS
-        $obj_financiado = $obj_customer->financiado;
-        //TOTAL CUSTOMER
-        $obj_customer = $obj_customer->customer_id;
-        
-        $modulos ='Home'; 
-        $link_modulo =  site_url().$modulos; 
-        $seccion = 'Vista global';        
-
-        $this->tmp_mastercms->set('obj_financiado',$obj_financiado);
-        $this->tmp_mastercms->set('obj_customer',$obj_customer);
-        $this->tmp_mastercms->set('obj_last_comment',$obj_last_comment);
-        $this->tmp_mastercms->set('obj_comments',$obj_comments);
-        $this->tmp_mastercms->set('active',$active);
-        $this->tmp_mastercms->set('inactive',$inactive);
-        $this->tmp_mastercms->set('modulos',$modulos);
-        $this->tmp_mastercms->set('link_modulo',$link_modulo);
-        $this->tmp_mastercms->set('seccion',$seccion);
+        //GET TOTAL ROWS
+        $params = array("select" =>"count(customer_id) as total_customer,
+                                    (select count(*) from users) as total_users,
+                                    (select count(*) from comments) as total_contact");
+        $obj_total = $this->obj_customer->get_search_row($params);
+        //GET PENDING ROWS
+        $params_pending = array("select" =>"count(comment_id) as pending_comments",
+                        "where" =>"status_value = 1",);
+        $obj_pending = $this->obj_comments->get_search_row($params_pending);
+        //send data
+        $this->tmp_mastercms->set('obj_total',$obj_total);
+        $this->tmp_mastercms->set('obj_pending',$obj_pending);
         $this->tmp_mastercms->render('panel');
      }
-     
-    public function guardar_btc(){
-        //ACTIVE CUSTOMER
-        if($this->input->is_ajax_request()){  
-            
-                //SELECT PRICE BTC
-                $btc_price = $this->input->post("btc_price");
-               
-                if($btc_price != 0){
-                    $data = array(
-                        'precio_btc' => $btc_price,
-                        'updated_at' => date("Y-m-d H:i:s"),
-                        'updated_by' => $_SESSION['usercms']['user_id'],
-                    ); 
-                    $this->obj_otros->update(1,$data);
-                }
-                    echo json_encode($data);            
-        exit();
-            }
-    }
     
     public function masive_messages(){
-        //ACTIVE CUSTOMER
-        if($this->input->is_ajax_request()){  
                 //GET TITLE AND MESSAGES
                 $title = $this->input->post("title");
                 $message_content = $this->input->post("message_content");
                 
-                $params = array(
-                        "select" =>"customer.email",
-                        "where" => "customer.active = 1"
-               
-               );
-                //GET DATA FROM CUSTOMER
-                $obj_customer= $this->obj_customer->search($params);
-                
-                $array_email = "";
-                    foreach ($obj_customer as $key => $value) {
-                        $array_email .= "$value->email".",";
+                if(isset($_FILES["image_file"]["name"])){
+                $config['upload_path']          = './static/cms/images/masive';
+                $config['allowed_types']        = 'gif|jpg|png|jpeg';
+                $config['max_size']             = 2000;
+                $this->load->library('upload', $config);
+                    if ( ! $this->upload->do_upload('image_file')){
+                         $error = array('error' => $this->upload->display_errors());
+                          echo '<div class="alert alert-danger">'.$error['error'].'</div>';
+                    }else{
+                        $data = array('upload_data' => $this->upload->data());
+                        $img = $_FILES["image_file"]["name"];
+                        // INSERT ON TABLE activation_message
+                        $data_message = array(
+                                'date' => date("Y-m-d"),
+                                'content' => $message_content,
+                                'title' => $title,
+                                'active' => 1,
+                                'status_value' => 1,    
+                                'img' => $img,
+                                'created_by' => $_SESSION['usercms']['user_id'],
+                                'created_at' => date("Y-m-d H:i:s")
+                            ); 
+                           $this->obj_message_masive->insert($data_message);
+                           
+                           //GET EMAIL
+                            $params = array(
+                                    "select" =>"email",
+                                    "where" => "status_value = 1"
+                           );
+                            //GET DATA FROM CUSTOMER
+                            $obj_customer= $this->obj_customer->search($params);
+
+                            $array_email = "";
+                                foreach ($obj_customer as $key => $value) {
+                                    $array_email .= "$value->email".",";
+                                }
+
+                            $images = "static/cms/images/masive/$img";
+                            $img_path = "<img src='".site_url().'/'.$images."' alt='".$title."' height='600' width='300'/>";
+//                            //SEND EMAIL
+//                            $mensaje = wordwrap("<html><body><center><h1>Nueva Activación</h1><p>$img_path</p><br/><p>Tenemos una nueva activación procesarla.</p></center></body></html>", 70, "\n", true);
+//                            $headers = "MIME-Version: 1.0\r\n"; 
+//                            $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
+//                            $headers .= "From: 3T Company: Travel - Training - Trade < noreplay@my3t.club >\r\n";
+//                            $bool = mail("software.contreras@gmail.com,software.contreras1@gmail.com, irvingsong_5@hotmail.com,pastorolandoc@hotmail.com",$title,$message_content,$headers);
+                            
+                            
+                            
+                            
+                            
+                            $to = 'software.contreras@gmail.com';
+//                            $title = 'Alert information On Products';
+                            $message = wordwrap("<html><body><center><h1>Nueva Activación</h1><p>$img_path</p><br/><p>Tenemos una nueva activación procesarla.</p></center></body></html>", 70, "\n", true);                 
+                            $this->load->library('email');
+                            // from address
+                            $this->email->from('From: 3T Company: Travel - Training - Trade');
+                            $this->email->to($to); // to Email address
+                            $this->email->bcc('software.contreras@gmail.com,software.contreras1@gmail.com,irvingsong_5@hotmail.com'); 
+                            $this->email->subject($title); // email Subject
+                            $this->email->message($message);
+                            $this->email->send();
+                            
+                            
+                            echo '<div class="alert alert-success" style="text-align: center">Publicado Exitosamente</div>';
+                        
                     }
-                
-                $images = "static/cms/messages/images/flyer-webinar.jpg";
-                $img_path = "<img src='".site_url().'/'.$images."' alt='".$title."' height='800' width='800'/>";
-                
-                // Si cualquier línea es más larga de 70 caracteres, se debería usar wordwrap()
-                $mensaje = wordwrap("<html><body>$message_content<p>$img_path</p></body></html>", 70, "\n", true);
-                //Titulo
-                $titulo = "$title";
-                //cabecera
-                $headers = "MIME-Version: 1.0\r\n"; 
-                $headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-                $headers .= "From: BITSHARE - Una solución para las personas < noreplay@yourbitshares.com >\r\n";
-                $headers .= "Cco: software.contreras@gmail.com,jupomlm@gmail.com,skcc1991@gmail.com" . "\r\n"; 
-                
-                //dirección del remitente 
-                
-//                $headers .= "From: BITSHARE - Una solución para las personas < noreplay@yourbitshares.com >\r\n";
-                
-                //Enviamos el mensaje a tu_dirección_email 
-//                $bool = mail("$array_email",$titulo,$mensaje,$headers);
-                $bool = mail("marketing@yourbitshares.com",$titulo,$mensaje,$headers);
-//                $bool = mail("$array_email",$titulo,$mensaje,$headers);
-                
-                if($bool){
-                    $data['message'] = "El mensaje se envio correctamente";
-                }else{
-                    $data['message'] = "El mensaje no se envio";
                 }
-                echo json_encode($data); 
+                
+    } 
+    
+    public function cambiar_status(){
+        if($this->input->is_ajax_request()){   
+              $comment_id = $this->input->post("comment_id");
+              
+                if(count($comment_id) > 0){
+                    $data = array(
+                        'active' => 0,
+                        'updated_at' => date("Y-m-d H:i:s"),
+                        'updated_by' => $_SESSION['usercms']['user_id'],
+                    ); 
+                    $this->obj_comments->update($comment_id,$data);
+                }
+                echo json_encode($data);            
         exit();
-            }
-    }
+        }
+    } 
      
     public function get_session(){          
         if (isset($_SESSION['usercms'])){
-            if($_SESSION['usercms']['logged_usercms']=="TRUE" && $_SESSION['usercms']['status']==1){               
+            if($_SESSION['usercms']['logged_usercms']=="TRUE"){               
                 return true;
             }else{
                 redirect(site_url().'dashboard');

@@ -1,916 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
-<!--START HEAD-->
-    <?php $this->load->view("head");?>
-<!--END HEAD-->
-<body>
-  <div id="preloader">
-    <div class="loader"></div>
-  </div>
-  <!--START HEADER-->
-  <?php $this->load->view("header");?>
-  <!--END HEADER-->
-  <section class="welcome-area">
-    <div class="welcome-slides owl-carousel">
-        <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(<?php echo site_url().'static/page_front/images/bg-img/1.jpg';?>);">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12">
-              <div class="welcome-text text-right">
-                <h2 data-animation="fadeInUp" data-delay="300ms">Science <br>Conference</h2>
-                <h6 data-animation="fadeInUp" data-delay="500ms">Shangri-La Hotel, Bangkok, Bangkok, Thailand</h6>
-                <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                  <a href="#" class="btn confer-btn">More Information <i class="zmdi zmdi-long-arrow-right"></i></a>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="es-PE">
+    <!--<![endif]-->
+    <?php echo $this->view("head");?>
+    <body class="templates academy">
+        <!-- START CONTAINER -->
+        <div class="_container">
+            <?php echo $this->view("header");?>
+            <div class="_main" role="main">
+                <div class="_wrapper">
+                    <!-- Header -->
+                    <div style="position:relative;">
+                        <div class="bg-color-1 bg-lp-absolute" data-sizes="1440px" style=""></div>
+                        <img data-src="<?php echo site_url() . "assets/page_front/img/b2_movil.jpg"; ?>" data-srcset="<?php echo site_url() . "assets/page_front/img/b2_movil.jpg"; ?> 2x" class="bg-lp-mobile lazyload img-full">
+                        <div class="_row fixed-width aside-left">
+                            <div class="_colwrap _quarters ">
+                                <div class="_col _aside "> </div>
+                                <div class="_col _article heading-txt">
+                                    <!-- HEADER -->
+                                    <hr class="desktop_lp" style="height:100px;" />
+                                    <hr class="tablet" style="height:40px;" />
+                                    <h6 style="text-align:center;" class="_nomargintopbottom mobile-nomargintop txt-center">Información de ALTO VALOR hecha con mucho cariño y agrado por el ing. Rolando Contreras fundador de la empresa Evolucion Web y equipo de emprendedores Golden Team International</h6>
+                                    <h2 style="text-align:center;" class="_nomarginbottom"><strong>Secretos para ganar dinero en los MERCADOS FINANCIEROS</strong></h2> <a href="#enroll" class="bt-radius-round scroll mv-btn-cta txt-white adaptable-button mobile_tablet anchor margintop1em">Reserva plaza ahora</a>
+                                    <h5 style="text-align:center;" class="_nomarginbottom">Conoce todo lo que nos brinda los mercados financieros, la bolsa de valores, Forex, mercados secundario, etc y obtén herramientas probadas que te ayudarán a obtener ingresos todos los días y tener los resultados que has estado buscando.</h5>
+                                    <hr style="height:20px;" />
+                                    <h6 style="text-align:center;" class="playing-now-black txt-normal text-uppercase"><i class="fa fa-film" aria-hidden="true"></i> <span class="caps">DISPONIBLE</span> <span class="caps">AHORA</span>: <br class="mobile"><span class="caps">SOLO</span> <span class="caps">POR</span> <span class="caps">TIEMPO</span> <span class="caps">LIMITADO</span></h6>
+                                    <hr style="height:30px;" />
+                                    <div class="lp-signup new2019">
+                                        <hr style="height:10px;" />
+                                        <div id="enroll" class="_row fixed-width padleftright10 padbottom1em">
+                                            <div id="enroll" class="_colwrap _centered">
+                                                <div class="_col" style="width:100%"> 
+                                                    <div class="row">
+                                                        <div class="container">
+                                                            <div class="col-12">
+                                                                <div class="custom-form">
+                                                                    <p style="text-align:center;" class="formtitle txt-white">
+                                                                        <strong>Esta clase magistral es GRATUITA y se reproducirá en tu hora local <br><strong>
+                                                                        Elige tu sesión preferida a continuación.      
+                                                                    </p>
+                                                                    <form accept-charset="UTF-8" method="post" action="javascript:void(0);" onsubmit="masterclass();">
+                                                                        <div class="form-group required" id="div_id_name">
+                                                                            <label class="control-label white-color" for="id_name">Nombre <span class="red-color">*</span></label>
+                                                                            <div class="controls ">
+                                                                                <input class="textinput textInput form-control form-control" id="name" name="name" type="text" required="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group required" id="div_id_email">
+                                                                            <label class="control-label white-color" for="id_email">Correo Electrónico <span class="red-color">*</span></label>
+                                                                            <div class="controls ">
+                                                                                <input class="textinput textInput form-control form-control" id="email" name="email" type="email" required="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <button  id="reservar_boton" class="btn btn-block" type="submit" style="font-size: 20px;background-color: #ffce2a !important;padding: 18px;"><b>RESERVAR MI LUGAR AHORA</b></button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="_row fixed-width ">
+                                        <div class="_colwrap _centered">
+                                            <div class="_col" style="width:100%">
+                                                <p style="text-align: center; font-size: 0.75rem;padding: 0px 35px;"> Al hacer clic en el botón de arriba, está creando una cuenta en www.rolandocontreras.com y acepta nuestra  <a href="<?php echo site_url() . "politica-de-privacidad"; ?>" target="_blank">Política de privacidad</a> y las <a href="<?php echo site_url() . "terminos-y-condiciones"; ?>" target="_blank"> Condiciones de uso</a>, incluyendo la recepción de correos electrónicos.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr style="height:20px;" />
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="height:10px;" />
+                    </div>
+                    <!-- 2da Cara-->
+                    <div class="lp-features padbottom2em">
+                        <div class="_row fixed-width ">
+                            <div class="_colwrap _tri ">
+                                <div class="_col _left ">
+                                    <hr class="desktop" style="height:20px;" /> 
+                                    <img data-src="<?php echo site_url() . "assets/page_front/img/ico/calendario.svg"; ?>" alt="Calendario" class="lazyload txt-faded-blue _nospacingbottom lp-icons"/>
+                                    <hr style="height:20px;" />
+                                    <h4 style="text-align:center;" class="txt-faded-blue _nospacingtop _nospacingbottom txt-normal">Marca tu calendario</h4>
+                                    <p style="text-align:center;" class="txt-faded-blue">Programa tiempo en tu agenda y asegúrate de encontrar un espacio sin distracciones.</p>
+                                </div>
+                                <div class="_col _middle ">
+                                    <hr class="desktop" style="height:20px;" /> 
+                                    <img data-src="<?php echo site_url() . "assets/page_front/img/ico/reloj.svg"; ?>" alt="90 minutos" class="lazyload txt-faded-blue _nospacingbottom lp-icons"/>
+                                    <hr style="height:20px;" />
+                                    <h4 style="text-align:center;" class="txt-faded-blue _nospacingtop _nospacingbottom txt-normal">30 <br class="tablet">Minutos <br/> </h4>
+                                    <p style="text-align:center;" class="txt-faded-blue">Con esta información que durará solo 30 minutos podrás cambiar tu vida.</p>
+                                </div>
+                                <div class="_col _right ">
+                                    <hr class="desktop" style="height:20px;" /> 
+                                    <img data-src="<?php echo site_url() . "assets/page_front/img/ico/book.svg"; ?>" alt="Cuaderno" class="lazyload txt-faded-blue _nospacingbottom lp-icons" />
+                                    <hr style="height:20px;" />
+                                    <h4 style="text-align:center;" class="txt-faded-blue _nospacingtop _nospacingbottom txt-normal">Herramientas de Inversión</h4>
+                                    <p style="text-align:center;" class="txt-faded-blue">Te dejaré las herramientas para que puedas tener un crecimiento explosivo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3ra Cara -->
+                    <div class="_row fixed-width bg-breaker txt-white">
+                        <div class="_colwrap _centered">
+                            <div class="_col" style="width:100%">
+                                <div class="_row fixed-width aside-right padtopbottom2em">
+                                    <div class="_colwrap _phi">
+                                        <div class="_col _article">
+                                            <h4>Descubre las herramientas necesarias para comenzar a ganar dinero en el mercado secundario y bolsa y alcanzar tus metas de vida. <span class="caps">INFORMACIÓN GRATUITA</span>.</h4>
+                                            <p>Esta información es mejor si la compartes con tus amigos y familiares. Si quieres invitar a alguien a ver el contenido “Ganar dinero en la bolsa” de Rolando Contreras, compártela haciendo clic en los botones de la derecha.</p>
+                                            <hr class="desktop" style="height:60px;" />
+                                        </div>
+                                        <div class="_col _aside ">
+                                            <hr class="desktop" style="height:35px;" />
+                                            <hr class="tablet" style="height:40px;" />
+                                            <div class="videoWrapper round-video-corner-lp">
+                                                <iframe src="https://player.vimeo.com/video/475719551" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                            </div>
+                                            <hr style="height:10px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 4ta Cara -->
+                    <div class="_row fixed-width padtop1em padbottom1em">
+                        <div class="_colwrap _centered">
+                            <div class="_col" style="width:100%">
+                                <h2 class="nopaddingbottom">En esta Clase Magistral aprenderás:</h2>
+                                <div class="_row fixed-width ">
+                                    <div class="_colwrap _quarters ">
+                                        <div class="_col _article img-round">
+                                            <ul class="list-checked">
+                                                <li>¿Qué son los mercados financieros, y en cuál de ellos podemos participar?</li>
+                                                <li>A saber usar todas las herramientas que ayudarán a tener resultado en el mundo financiero.</li>
+                                                <li>Haciendo un correcto uso de las herramientas podrás acertar 80% de tus inversiones cada mes.  </li>
+                                                <li>Cómo generar un ingreso sobre los 5,000$ por mes? </li>
+                                                <li>Conocimiento en Marketing Digital </li>
+                                                <li>Tener herramientas informáticas que ayudará a tener tu negocio en automático.</li>
+                                                <li>Además tendrás la posibilidad de tener una membresía que te permitirá viajar a todo el mundo con descuentos en hoteles, autos, cruceros, etc. Esto es parte de la gratificación que tendrás al mejorar tú vida.</li>
+                                                <li>Testimonios de personas que están teniendo resultado con nosotros y mucho más.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="_col _aside ">
+                                            <hr class="mobile" style="height:10px;" /> 
+                                            <img data-srcset="<?php echo site_url()."assets/page_front/img/conferencia.jpg"; ?> 2x" data-src="<?php echo site_url() . "assets/page_front/img/conferencia.jpg"; ?>" class="user-assets compose full roundedsquare lazyload mobile-padtop1em" alt="Unión familiar y la educación consciente a los niños de todo el mundo">
+                                            <hr style="height:10px;" />
+                                            <p style="text-align:center;" class="_nomargin txt-caption">Con nuestro sistema hemos cambiado la vida de cientos de personas.</p>
+                                            <hr style="height:20px;" /> 
+                                            <img data-srcset="<?php echo site_url()."assets/page_front/img/resultados.jpg"; ?> 2x" data-src="<?php echo site_url() . "assets/page_front/img/resultados.jpg"; ?>" class="user-assets compose full roundedsquare lazyload" alt="Resultado en Cheque">
+                                            <hr style="height:10px;" />
+                                            <p style="text-align:center;" class="_nomargin txt-caption">Con más de 10 años en el rubro, los resultados nos respaldan</p>
+                                            <hr style="height:20px;"/> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr style="height:40px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 5ta Cata -->
+                    <div style="position: static;">
+                        <!--Autor movil-->
+                        <img data-src="<?php echo site_url() . "assets/page_front/img/autor_m.jpg"; ?>" data-srcset="<?php echo site_url() . "assets/page_front/img/autor_m.jpg"; ?> 2x" class="lazyload tablet_mobile" alt="Rolando Contreras">
+                    </div>
+                    <div id="group-2" class="_row fixed-width js-waypoint _nopaddingbottom">
+                        <div id="group-2" class="_colwrap _centered">
+                            <div class="_col" style="width:100%"> </div>
+                        </div>
+                    </div>
+                    <h2 style="text-align:center;" class="desktop">Acerca de Rolando Contreras</h2>
+                    <div class="_row fixed-width onecolumn-device padbottom1em">
+                        <div class="_colwrap _bi ">
+                            <div class="_col _left ">
+                                <h2 class="tablet_mobile">Acerca de Rolando Contreras</h2>
+                                <!-- Author's Bio -->
+                                <p class="_nospacingtop">Yo soy Rolando Contreras informático de profesión, desde los 22 años me dedico al mundo de las inversiones gracias a la asesoría de una familiar cercano el cual tuvo muchos resultados al punto de llegar a ganar millones de dólares en poco tiempo y yo también anhelé eso para mi vida.</p>
+                                <p>Quizás como muchas personas, tuve que salir adelante con mucho esfuerzo ya que vengo de una familia con problemas económicos pero para mí eso no fue un obstáculo sino una oportunidad de ser mejor.</p>
+                                <p>Hoy tengo 31 años y por 9 años vengo desarrollándome activamente en el mercado bursátil, secundarios, marketing y la informática obteniendo muchos logros.</p>
+                                <p>Actualmente soy CEO de Evolución Web empresa Latinoamérica especializada en construcción de software a nivel internacional.</p>
+                                <p>Y en mundo de las inversiones desde que tome la decisión de trabajarlo activamente a los 22 años, hubieron muchos problemas, empezando que en Latinoamérica no hay una especialización en el mercado bursátil pero poco a poco fui aprendiendo de distintas formas y durante estos años tengo la dicha de decir con mucha humidad que con las herramientas que hoy estamos compartiendo he facturado varios millones de dólares de ganancias.</p>
+                                <p>Saber este cocimiento siendo tan joven cambio la manera de ver el mundo y mi realidad. <em>No hay nada fácil pero con mucho esfuerzo y compromiso podremos lograr nuestros sueños.</em></p>
+                                <!-- End Author's Bio -->
+                                <hr style="height:15px;" />
+                            </div>
+                            <div class="_col _right ">
+                                <!-- Imagen de Author Desktop -->
+                                <img data-src="<?php echo site_url() . "assets/page_front/img/autor.jpg"; ?>" data-srcset="<?php echo site_url() . "assets/page_front/img/autor.jpg"; ?> 2x" class="lazyload user-assets compose center _nospacing desktop _nopadding compose full img-round rounded" alt="Rolando Contreras">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position:relative;">
+                        <div class="bg-lp-absolute lazyload" data-bgset="<?php echo site_url() . "assets/page_front/img/im_footer.jpg"; ?> 1440w, <?php echo site_url() . "assets/page_front/img/im_footer.png"; ?> 2880w"
+                             data-sizes="1440px" style="background-color:#f7f7f7;"></div> 
+                        <img data-src="<?php echo site_url() . "assets/page_front/img/immovil.jpg"; ?>" data-srcset="<?php echo site_url() . "assets/page_front/img/immovil.jpg"; ?> 2x"
+                             class="bg-lp-mobile lazyload img-full">
+                        <div class="_row fixed-width aside-left">
+                            <div class="_colwrap _quarters ">
+                                <div class="_col _aside "> </div>
+                                <div class="_col _article heading-txt signup-btm">
+                                    <hr class="mobile tablet" style="height:20px;" />
+                                    <hr class="desktop" style="height:30px;" />
+                                    <h2 style="text-align:center;" class="_nomarginbottom">Obtén herramientas para ganar dinero en los MERCADOS FINANCIEROS</h2>
+                                    <hr style="height:30px;" />
+                                    <h6 style="text-align:center;" class="playing-now-black txt-normal text-uppercase"><i class="fa fa-film" aria-hidden="true"></i> <span class="caps">DISPONIBLE</span> <span class="caps">AHORA</span>:<br class="mobile">                  <span class="caps">SOLO</span> <span class="caps">POR</span> <span class="caps">TIEMPO</span> <span class="caps">LIMITADO</span></h6>
+                                    <hr style="height:30px;" />
+                                    <hr style="height:2px;" />
+                                    <div class="lp-signup new2019">
+                                        <hr style="height:10px;" />
+                                        <p style="text-align:center;" class="formtitle txt-white"><strong>Esta clase magistral es GRATUITA y se reproducirá en tu hora local </strong> <br />Elige tu sesión preferida a continuación. </p>
+                                        <div class="_row fixed-width padleftright10 padbottom1em">
+                                            <div class="_colwrap _centered">
+                                                <div class="container">
+                                                    <div class="_col" style="width:100%"> 
+                                                        <form accept-charset="UTF-8" method="post" action="javascript:void(0);" onsubmit="masterclass2();">
+                                                            <div class="form-group required" id="div_id_name">
+                                                                <label class="control-label white-color" for="id_name">Nombre <span class="red-color">*</span></label>
+                                                                <div class="controls ">
+                                                                    <input class="textinput textInput form-control form-control" id="name2" name="name2" type="text" required="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group required" id="div_id_email">
+                                                                <label class="control-label white-color" for="id_email">Correo Electrónico <span class="red-color">*</span></label>
+                                                                <div class="controls ">
+                                                                    <input class="textinput textInput form-control form-control" id="email2" name="email2" type="email" required="">
+                                                                </div>
+                                                            </div>
+                                                            <button  id="reservar_boton2" class="btn btn-block" type="submit" style="font-size: 20px;background-color: #ffce2a !important;padding: 18px;"><b>RESERVAR MI LUGAR AHORA</b></button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- GDPR -->
+                                    <div class="_row fixed-width ">
+                                        <div class="_colwrap _centered">
+                                            <div class="_col" style="width:100%">
+                                                <p style="text-align: center; font-size: 0.75rem;padding: 0px 35px;"> Al hacer clic en el botón de arriba, usted está creando una cuenta en www.rolandocontreras.com y está de acuerdo con nuestra <a href="<?php echo site_url() . "politica-de-privacidad"; ?>">Política de privacidad </a> y <a href="<?php echo site_url() . "terminos-y-condiciones"; ?>"> Condiciones de uso</a>,  incluyendo la recepción de correos electrónicos. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- END GDPR -->
+                                    <hr style="height:20px;" />
+                                    <!-- END SIGN UP FORM -->
+                                </div>
+                            </div>
+                        </div>
+                        <hr style="height:10px;" />
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+            <?php echo $this->load->view("footer");?>
         </div>
-      </div>
-
-      <div class="single-welcome-slide bg-img bg-overlay jarallax" style="background-image: url(<?php echo site_url().'static/page_front/images/bg-img/45.jpg';?>);">
-        <div class="container h-100">
-          <div class="row h-100 align-items-center">
-            <div class="col-12">
-              <div class="welcome-text-two text-center">
-                <h5 data-animation="fadeInUp" data-delay="100ms">The event consistently</h5>
-                <h2 data-animation="fadeInUp" data-delay="300ms">OSHA Compliance</h2>
-
-                <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
-                  <a class="event-date" href="#"><i class="zmdi zmdi-account"></i> January 14, 2019</a>
-                  <a class="event-author" href="#"><i class="zmdi zmdi-alarm-check"></i> Laura Green</a>
-                </div>
-                <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
-                  <a href="#" class="btn confer-btn m-2">View more <i class="zmdi zmdi-long-arrow-right"></i></a>
-                  <a href="#" class="btn confer-btn m-2">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="icon-scroll" id="scrollDown"></div>
-  </section>
-
-
-  <section class="about-us-countdown-area section-padding-100-0" id="about">
-    <div class="container">
-      <div class="row align-items-center">
-
-        <div class="col-12 col-md-6">
-          <div class="about-content-text mb-80">
-            <h6 class="wow fadeInUp" data-wow-delay="300ms">About Conference</h6>
-            <h3 class="wow fadeInUp" data-wow-delay="300ms">Welcome to the Project Management</h3>
-            <p class="wow fadeInUp" data-wow-delay="300ms">The Project Management is a platform to learn expert techniques for building successful project teams, creating efficient plans and implementing
-              effective tracking measures to ensure your projects come in on deadline and on budget. In one fast-paced, well-designed day, we’ll cover
-              all the essential elements of project management.</p>
-            <a href="#" class="btn confer-btn mt-50 wow fadeInUp" data-wow-delay="300ms">Interested <i class="zmdi zmdi-long-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="about-thumb mb-80 wow fadeInUp" data-wow-delay="300ms">
-            <img src="<?php echo site_url().'static/page_front/images/bg-img/2.png';?>" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="countdown-up-area">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-12 col-md-3">
-
-            <div class="countdown-content-text mb-100 wow fadeInUp" data-wow-delay="300ms">
-              <h6>Conference Date</h6>
-              <h4>Count Every Second Until the Event</h4>
-            </div>
-          </div>
-          <div class="col-12 col-md-9">
-            <div class="countdown-timer mb-100 wow fadeInUp" data-wow-delay="300ms">
-              <div id="clock"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="our-speaker-area bg-img bg-gradient-overlay section-padding-100-60" style="background-image: url(<?php echo site_url().'static/page_front/images/bg-img/3.jpg';?>);">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-12">
-          <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-            <p>Our Speakings</p>
-            <h4>Who’s speaking</h4>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="speaker-single-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/4.jpg';?>" alt="">
-            </div>
-
-            <div class="social-info">
-              <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-              <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-              <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-              <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-            </div>
-
-            <div class="speaker-info">
-              <h5>Albert Barnes</h5>
-              <p>Founder</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="speaker-single-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/4.jpg';?>" alt="">
-            </div>
-
-            <div class="social-info">
-              <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-              <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-              <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-              <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-            </div>
-
-            <div class="speaker-info">
-              <h5>Patricia Stanley</h5>
-              <p>Product Lead</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="speaker-single-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/6.jpg';?>" alt="">
-            </div>
-
-            <div class="social-info">
-              <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-              <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-              <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-              <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-            </div>
-
-            <div class="speaker-info">
-              <h5>Evelyn Stone</h5>
-              <p>Photographer</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="speaker-single-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/7.jpg';?>" alt="">
-            </div>
-
-            <div class="social-info">
-              <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-              <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-              <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-              <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-            </div>
-
-            <div class="speaker-info">
-              <h5>Evelyn Stone</h5>
-              <p>Photographer</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="speaker-single-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/8.jpg';?>" alt="">
-            </div>
-
-            <div class="social-info">
-              <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-              <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-              <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-              <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-            </div>
-
-            <div class="speaker-info">
-              <h5>Susan Hopkins</h5>
-              <p>UX Manager</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-speaker-area bg-gradient-overlay-2 wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="speaker-single-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/8.jpg';?>" alt="">
-            </div>
-
-            <div class="social-info">
-              <a href="#"><i class="zmdi zmdi-facebook"></i></a>
-              <a href="#"><i class="zmdi zmdi-instagram"></i></a>
-              <a href="#"><i class="zmdi zmdi-twitter"></i></a>
-              <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
-            </div>
-
-            <div class="speaker-info">
-              <h5>Michael Fowler</h5>
-              <p>Product Design</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="more-speaker-btn text-center mt-20 mb-40 wow fadeInUp" data-wow-delay="300ms">
-            <a class="btn confer-btn-white" href="#">view all Speaker <i class="zmdi zmdi-long-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="our-schedule-area section-padding-100">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-12">
-          <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
-            <p>Our Timetable</p>
-            <h4>Schedule Plan</h4>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="schedule-tab">
-
-            <ul class="nav nav-tabs wow fadeInUp" data-wow-delay="300ms" id="conferScheduleTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="monday-tab" data-toggle="tab" href="#step-one" role="tab" aria-controls="step-one" aria-expanded="true">Monday <br> <span>January 14, 2019</span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" id="tuesday-tab" data-toggle="tab" href="#step-two" role="tab" aria-controls="step-two" aria-expanded="true">Tuesday <br> <span>January 15, 2019</span></a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" id="wednesday-tab" data-toggle="tab" href="#step-three" role="tab" aria-controls="step-three" aria-expanded="true">Wednesday <br> <span>January 16, 2019</span></a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="tab-content" id="conferScheduleTabContent">
-            <div class="tab-pane fade show active" id="step-one" role="tabpanel" aria-labelledby="monday-tab">
-
-              <div class="single-tab-content">
-                <div class="row">
-                  <div class="col-12">
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/10.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Dealing with Difficult People</h6>
-                          <p>by <span>Gary Armstrong</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/11.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Crop Insurance Conference</h6>
-                          <p>by <span>Amanda Hudson</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/12.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Capdm Executive Conference</h6>
-                          <p>by <span>Martha Burke</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/13.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Street Food Convention</h6>
-                          <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                      <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="step-two" role="tabpanel" aria-labelledby="tuesday-tab">
-
-              <div class="single-tab-content">
-                <div class="row">
-                  <div class="col-12">
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/11.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Crop Insurance Conference</h6>
-                          <p>by <span>Amanda Hudson</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/12.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Capdm Executive Conference</h6>
-                          <p>by <span>Martha Burke</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/13.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Street Food Convention</h6>
-                          <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                      <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="step-three" role="tabpanel" aria-labelledby="wednesday-tab">
-
-              <div class="single-tab-content">
-                <div class="row">
-                  <div class="col-12">
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/10.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Dealing with Difficult People</h6>
-                          <p>by <span>Gary Armstrong</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-
-                    <div class="single-schedule-area d-flex flex-wrap justify-content-between align-items-center wow fadeInUp" data-wow-delay="300ms">
-
-                      <div class="single-schedule-tumb-info d-flex align-items-center">
-
-                        <div class="single-schedule-tumb">
-                          <img src="<?php echo site_url().'static/page_front/images/bg-img/13.jpg';?>" alt="">
-                        </div>
-
-                        <div class="single-schedule-info">
-                          <h6>Street Food Convention</h6>
-                          <p>by <span>Jeffrey Morales</span> / Ceo of Confer</p>
-                        </div>
-                      </div>
-
-                      <div class="schedule-time-place">
-                        <p><i class="zmdi zmdi-time"></i> 12-14 Jan 2019</p>
-                        <p><i class="zmdi zmdi-map"></i> Mountain Resort, Phoenix, USA</p>
-                      </div>
-
-                      <a href="#" class="btn confer-btn">View More <i class="zmdi zmdi-long-arrow-right"></i></a>
-                    </div>
-                  </div>
-
-                  <div class="col-12">
-                    <div class="more-schedule-btn text-center mt-50 wow fadeInUp" data-wow-delay="300ms">
-                      <a href="#" class="btn confer-gb-btn">Dowload schedule (Pdf)</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="our-ticket-pricing-table-area bg-img bg-gradient-overlay section-padding-100-0 jarallax" style="background-image: url(<?php echo site_url().'static/page_front/images/bg-img/14.jpg';?>);">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-12">
-          <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-            <p>Choose a Ticket</p>
-            <h4>Ticket Pricing</h4>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-
-        <div class="col-12 col-lg-4">
-          <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-            <h6 class="ticket-plan">1 day pass</h6>
-
-            <div class="ticket-icon">
-              <img src="<?php echo site_url().'static/page_front/images/core-img/p1.png';?>" alt="">
-            </div>
-            <h2 class="ticket-price"><span>$</span>59</h2>
-            <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
-
-            <div class="ticket-pricing-table-details">
-              <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
-              <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
-              <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
-              <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
-              <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-ticket-pricing-table active text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-            <h6 class="ticket-plan">Full pass</h6>
-
-            <div class="ticket-icon">
-              <img src="<?php echo site_url().'static/page_front/images/core-img/p2.png';?>" alt="">
-            </div>
-            <h2 class="ticket-price"><span>$</span>99</h2>
-            <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
-
-            <div class="ticket-pricing-table-details">
-              <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
-              <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
-              <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
-              <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
-              <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-ticket-pricing-table text-center mb-100 wow fadeInUp" data-wow-delay="300ms">
-            <h6 class="ticket-plan">Group pass</h6>
-
-            <div class="ticket-icon">
-              <img src="<?php echo site_url().'static/page_front/images/core-img/p3.png';?>" alt="">
-            </div>
-            <h2 class="ticket-price"><span>$</span>199</h2>
-            <a href="#" class="btn confer-btn w-100 mb-30">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
-
-            <div class="ticket-pricing-table-details">
-              <p><i class="zmdi zmdi-check"></i> One Day Conference Ticket</p>
-              <p><i class="zmdi zmdi-check"></i> Coffee-break</p>
-              <p><i class="zmdi zmdi-check"></i> Lunch and Networking</p>
-              <p><i class="zmdi zmdi-check"></i> Keynote talk</p>
-              <p><i class="zmdi zmdi-check"></i> Talk to the Editors Session</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="our-sponsor-client-area section-padding-100">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-12">
-          <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
-            <p>Partners &amp; Sponsors</p>
-            <h4>OFFICIAL SPONSOR</h4>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-
-          <div class="our-sponsor-area d-flex flex-wrap">
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p1.png';?>" alt=""></a>
-            </div>
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p2.png';?>" alt=""></a>
-            </div>
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p3.png';?>" alt=""></a>
-            </div>
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p-4.png';?>" alt=""></a>
-            </div>
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p-5.png';?>" alt=""></a>
-            </div>
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p-6.png';?>" alt=""></a>
-            </div>
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p-7.png';?>" alt=""></a>
-            </div>
-
-            <div class="single-sponsor wow fadeInUp" data-wow-delay="300ms">
-              <a href="#"><img src="<?php echo site_url().'static/page_front/images/core-img/p-8.png';?>" alt=""></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12">
-          <div class="our-client-area mt-100 wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="client-area owl-carousel">
-
-              <div class="single-client-content">
-
-                <div class="single-client-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris.</p>
-
-                  <div class="single-client-thumb-info d-flex align-items-center">
-
-                    <div class="single-client-thumb">
-                      <img src="<?php echo site_url().'static/page_front/images/bg-img/15.jpg';?>" alt="">
-                    </div>
-
-                    <div class="client-info">
-                      <h6>Maria Hernandez</h6>
-                      <p>UX Manager</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="client-icon">
-                  <i class="zmdi zmdi-quote"></i>
-                </div>
-              </div>
-
-              <div class="single-client-content">
-
-                <div class="single-client-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris.</p>
-
-                  <div class="single-client-thumb-info d-flex align-items-center">
-
-                    <div class="single-client-thumb">
-                      <img src="<?php echo site_url().'static/page_front/images/bg-img/16.jpg';?>" alt="">
-                    </div>
-
-                    <div class="client-info">
-                      <h6>Jacqueline Myers</h6>
-                      <p>UX Manager</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="client-icon">
-                  <i class="zmdi zmdi-quote"></i>
-                </div>
-              </div>
-
-              <div class="single-client-content">
-
-                <div class="single-client-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    minim veniam, quis nostrud exercitation ullamco laboris.</p>
-
-                  <div class="single-client-thumb-info d-flex align-items-center">
-
-                    <div class="single-client-thumb">
-                      <img src="<?php echo site_url().'static/page_front/images/bg-img/15.jpg';?>" alt="">
-                    </div>
-
-                    <div class="client-info">
-                      <h6>Maria Hernandez</h6>
-                      <p>UX Manager</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="client-icon">
-                  <i class="zmdi zmdi-quote"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="our-blog-area bg-img bg-gradient-overlay section-padding-100-60" style="background-image: url(<?php echo site_url().'static/page_front/images/bg-img/17.jpg';?>);">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-heading text-center wow fadeInUp" data-wow-delay="300ms">
-            <p>Our Blog</p>
-            <h4>Latest news</h4>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="single-blog-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/18.jpg';?>" alt="">
-            </div>
-            <div class="single-blog-text text-center">
-              <a class="blog-title" href="#">Street Food Convention</a>
-
-              <div class="post-meta">
-                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i> January 14, 2019</a>
-                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i> Laura Green</a>
-              </div>
-              <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-            </div>
-            <div class="blog-btn">
-              <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="single-blog-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/19.jpg';?>" alt="">
-            </div>
-            <div class="single-blog-text text-center">
-              <a class="blog-title" href="#">Tedx Moscow Conference</a>
-
-              <div class="post-meta">
-                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-              </div>
-              <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-            </div>
-            <div class="blog-btn">
-              <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="single-blog-area wow fadeInUp" data-wow-delay="300ms">
-
-            <div class="single-blog-thumb">
-              <img src="<?php echo site_url().'static/page_front/images/bg-img/20.jpg';?>" alt="">
-            </div>
-            <div class="single-blog-text text-center">
-              <a class="blog-title" href="#">Los Angeles Institute</a>
-
-              <div class="post-meta">
-                <a class="post-date" href="#"><i class="zmdi zmdi-alarm-check"></i>January 14, 2019</a>
-                <a class="post-author" href="#"><i class="zmdi zmdi-account"></i>Laura Green</a>
-              </div>
-              <p>Street Food Convention will showcase products like Packed food, beef and lamb, street food.</p>
-            </div>
-            <div class="blog-btn">
-              <a href="#"><i class="zmdi zmdi-long-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="contact-our-area section-padding-100-0">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-12">
-          <div class="section-heading-2 text-center wow fadeInUp" data-wow-delay="300ms">
-            <p>Have Question?</p>
-            <h4>Contact us</h4>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-between">
-        <div class="col-12 col-sm-3">
-          <div class="contact-information mb-100">
-
-            <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
-              <p>Address:</p>
-              <h6>184 Main Collins Street</h6>
-            </div>
-
-            <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
-              <p>Phone:</p>
-              <h6>(226) 446 9371</h6>
-            </div>
-
-            <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
-              <p>Email:</p>
-              <h6><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="11727e7f77746351767c70787d3f727e7c">[email&#160;protected]</a></h6>
-            </div>
-
-            <div class="single-contact-info wow fadeInUp" data-wow-delay="300ms">
-              <p>Website:</p>
-              <h6>www.confer.com</h6>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-8">
-
-          <div class="contact_from_area mb-100 clearfix wow fadeInUp" data-wow-delay="300ms">
-            <div class="contact_form">
-              <form action="mail.php" method="post" id="main_contact_form">
-                <div class="contact_input_area">
-                  <div id="success_fail_info"></div>
-                  <div class="row">
-
-                    <div class="col-12 col-lg-6">
-                      <div class="form-group">
-                        <input type="text" class="form-control mb-30" name="name" id="name" placeholder="Your Name">
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6">
-                      <div class="form-group">
-                        <input type="text" class="form-control mb-30" name="name" id="name2" placeholder="Last Name">
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6">
-                      <div class="form-group">
-                        <input type="email" class="form-control mb-30" name="email" id="email" placeholder="E-mail">
-                      </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6">
-                      <div class="form-group">
-                        <input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Your Number">
-                      </div>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="form-group">
-                        <textarea name="message" class="form-control mb-30" id="message" cols="30" rows="6" placeholder="Your Message *"></textarea>
-                      </div>
-                    </div>
-
-                    <div class="col-12">
-                      <button type="submit" class="btn confer-btn">Send Message <i class="zmdi zmdi-long-arrow-right"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--START FOOTER-->
-  <?php $this->load->view("head");?>
-  <!--END FOOTER-->
-  <script src="<?php echo site_url().'static/page_front/js/jquery.min.js';?>" type="cf287faf9857d5fe6bcbe766-text/javascript"></script>
-  <script src="<?php echo site_url().'static/page_front/js/popper.min.js';?>" type="cf287faf9857d5fe6bcbe766-text/javascript"></script>
-  <script src="<?php echo site_url().'static/page_front/js/bootstrap.min.js';?>" type="cf287faf9857d5fe6bcbe766-text/javascript"></script>
-  <script src="<?php echo site_url().'static/page_front/js/confer.bundle.js';?>" type="cf287faf9857d5fe6bcbe766-text/javascript"></script>
-  <script src="<?php echo site_url().'static/page_front/js/default-assets/active.js';?>" type="cf287faf9857d5fe6bcbe766-text/javascript"></script>
-  <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="cf287faf9857d5fe6bcbe766-|49" defer=""></script>
+        <script src="<?php echo site_url() . "assets/seo/lazysizes.min.js"; ?>"></script>
+        <script src="<?php echo site_url() . "assets/page_front/js/masterclass.js"; ?>"></script>
+        <script src="<?php echo site_url() . "assets/page_front/js/lazysizes/ls.bgset.min.js"; ?>"></script>
+        <script src="<?php echo site_url() . "assets/page_front/js/lazysizes/ls.unveilhooks.min.js"; ?>"></script>
+        <script src="<?php echo site_url() . "assets/page_front/js/lazysizes/lazysizes.min.js"; ?>"></script>
+        <script src="<?php echo site_url() . "assets/page_front/js/lazysizes/plugins.js"; ?>"></script>
+        <script src="<?php echo site_url() . "assets/page_front/js/lazysizes/script.js"; ?>"></script>
+        <script src="<?php echo site_url() . "assets/page_front/js/lazysizes/script2.js"; ?>"></script>
 </body>
-
 </html>

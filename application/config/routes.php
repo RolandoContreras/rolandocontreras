@@ -41,56 +41,46 @@
 $route['default_controller'] = "home";
 $route['404_override'] = 'errors/error_404';
 
-$route['home'] = 'home';
-$route['videos'] = 'videos';
-$route['login'] = 'login';
-$route['plan/([0-9a-z_-]+)'] = "plan/packages";
+$route['contacto'] = "contact";
+$route['contacto/send_messages'] = "contact/send_messages";
 
-$route['dashboard'] = "dashboard";
+$route['paso2'] = "home/paso2";
+$route['gracias'] = "home/gracias";
+$route['masterclass'] = "home/masterclass";
+
+$route['terminos-y-condiciones'] = "home/term_condition";
+$route['politica-de-privacidad'] = "home/policy";
+
+//enlaces de software
+$route['inicio'] = 'home';
+$route['home/boletin'] = 'home/boletin';
+$route['email'] = 'register/validate_email';
+$route['email/([0-9a-z_A-Z-=%+/]+)'] = 'register/validate_email/$1';
+$route['home/sitemap'] = 'home/sitemap';
+
+$route['admin'] = "dashboard";
 $route['dashboard/panel'] = "panel";
-$route['dashboard/panel/guardar_btc'] = "panel/guardar_btc";
-$route['dashboard/panel/masive_messages'] = "panel/masive_messages";
 
-//SECTION
-$route['dashboard/about'] = "d_about";
+$route['dashboard/boletin'] = "d_boletin";
+$route['dashboard/boletin/load/([0-9]+)'] = "d_boletin/load/$1";
+$route['dashboard/boletin/validate'] = "d_boletin/validate";
+$route['dashboard/boletin/delete'] = "d_boletin/delete";
 
-//END SECTION
 $route['dashboard/clientes'] = "d_customer";
-$route['dashboard/financiados'] = "d_customer/financiados";
-$route['dashboard/clientes/active_customer'] = "d_customer/active_customer";
-$route['dashboard/clientes/no_active_customer'] = "d_customer/no_active_customer";
 $route['dashboard/clientes/load/([0-9]+)'] = "d_customer/load/$1";
 $route['dashboard/clientes/validate'] = "d_customer/validate";
-
-$route['dashboard/pagos_diarios'] = "d_pay_dialy";
-$route['dashboard/pagos_diarios/hacer_pago'] = "d_pay_dialy/hacer_pago";
+$route['dashboard/clientes/delete'] = "d_customer/delete";
 
 $route['dashboard/comentarios'] = "d_comments";
 $route['dashboard/comentarios/cambiar_status'] = "d_comments/change_status";
 $route['dashboard/comentarios/cambiar_status_no'] = "d_comments/change_status_no";
 
-$route['dashboard/usuarios'] = "d_users";
-$route['dashboard/usuarios'] = "d_users";
-$route['dashboard/usuarios/load'] = "d_users/load";
-$route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";
-$route['dashboard/usuarios/validate'] = "d_users/validate";
 
-$route['dashboard/activaciones'] = "d_activate";
-$route['dashboard/activaciones/active_customer'] = "d_activate/active_customer";
-$route['dashboard/activaciones/active_financy'] = "d_activate/active_financy";
-$route['dashboard/activaciones/active'] = "d_activate/active";
+$route['dashboard/reportes/asociados'] = "d_report_customer";
+$route['dashboard/reportes/cuentas'] = "d_report_membership";
+$route['dashboard/reportes/pagos'] = "d_report_pays";
 
-$route['dashboard/cobros'] = "d_pays";
-$route['dashboard/cobros_details/([0-9]+)'] = "d_pays/details/$1";
-$route['dashboard/cobros/pagado'] = "d_pays/pagado";
-$route['dashboard/cobros/devolver'] = "d_pays/devolver";
-
-$route['dashboard/usuarios'] = "d_users";
-$route['dashboard/usuarios'] = "d_users";
-$route['dashboard/usuarios/load'] = "d_users/load";
-$route['dashboard/usuarios/load/([0-9]+)'] = "d_users/load/$1";
-$route['dashboard/usuarios/validate'] = "d_users/validate";
-
+$route['salir'] = "login/logout";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

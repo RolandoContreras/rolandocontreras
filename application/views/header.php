@@ -1,51 +1,17 @@
-<header class="header-area">
-  <div class="classy-nav-container breakpoint-off">
-    <div class="container">
-      <nav class="classy-navbar justify-content-between" id="conferNav">
-        <a class="nav-brand" href="">
-              <img src="<?php echo site_url().'static/page_front/images/logo/logo.png';?>" alt="logo">
-          </a>
-        <div class="classy-navbar-toggler">
-          <span class="navbarToggler"><span></span><span></span><span></span></span>
-        </div>
-        <div class="classy-menu">
-          <div class="classycloseIcon">
-            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-          </div>
-          <div class="classynav">
-            <ul id="nav">
-              <li class="active">
-                  <a href="<?php echo site_url();?>">Home</a>
-              </li>
-              <li><a href="#">Pages</a>
-                <ul class="dropdown"> 
-                  <li><a href="<?php echo site_url();?>">- Home</a></li>
-                  <li><a href="about.html">- About Us</a></li>
-                  <li><a href="speakers.html">- Speakears</a></li>
-                  <li><a href="schedule.html">- Schedule</a></li>
-                  <li><a href="tickets.html">- Tickets</a></li>
-                  <li><a href="blog.html">- Blog</a></li>
-                  <li><a href="single-blog.html">- Single Blog</a></li>
-                  <li><a href="contact.html">- Contact</a></li>
-                  <li><a href="#">- Dropdown</a>
-                    <ul class="dropdown">
-                      <li><a href="#">- Dropdown Item</a></li>
-                      <li><a href="#">- Dropdown Item</a></li>
-                      <li><a href="#">- Dropdown Item</a></li>
-                      <li><a href="#">- Dropdown Item</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="speakers.html">Speakears</a></li>
-              <li><a href="<?php echo site_url().'videos';?>">Vídeos</a></li>
-              <li><a href="contact.html">Contact</a></li>
+<header class="fixed-width mv-navibar">
+    <div class="mv-container mv-navibar__wrapper">
+        <p class="mv-navibar__logo">
+            <a href="<?php echo site_url();?>" class="mv-logo"> 
+                <img src="<?php echo site_url() . "assets/page_front/img/logo/logo-2.png"; ?>" class="top-logo _logo" alt="Rolando Contreras" width="100"/>
+            </a>
+        </p>
+        <nav id="js-navi" class="navbar mv-navi__drawer" style="display: block">
+            <ul class="nav">
+                <li class="">
+                    <a class="nav-pill" href="<?php echo site_url()."contacto";?>">Contáctanos</a>
+                </li>
             </ul>
-            <a href="#" class="btn confer-btn mt-3 mt-lg-0 ml-3 ml-lg-5">Get Tickets <i class="zmdi zmdi-long-arrow-right"></i></a>
-          </div>
-
-        </div>
-      </nav>
+        </nav>
     </div>
-  </div>
+    <div class="mv-navibar__mobile-move"></div>
 </header>
